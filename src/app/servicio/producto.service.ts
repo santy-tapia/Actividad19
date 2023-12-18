@@ -1,10 +1,10 @@
-import { Producto } from './../modulo/producto';
 import { Injectable } from '@angular/core';
+import { Producto } from '../modulo/producto';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductoServiceService {
+export class ProductoService {
   private _productos:Producto[] = [
     new Producto(1, "Camiseta 1", "camiseta sencilla", "rojo", 10.55, "camiseta.jpg")
   ]
@@ -15,7 +15,11 @@ export class ProductoServiceService {
   }
 
    public getProducto(id: number): Producto | undefined {
-    // Buscar el producto por id
     return this._productos.find(producto => producto.id === id);
+  }
+
+ buscarProductos(texto: string): Producto[] {
+    texto = texto.toLowerCase();
+    return this._productos.filter(producto => producto.nombre.toLowerCase().includes(texto));
   }
 }
