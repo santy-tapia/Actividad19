@@ -1,1 +1,16 @@
-<p>producto works!</p>
+<div class="card" style="width: 20em;">
+  <div class="card-body">
+    @if (!producto.foto) {
+      <img class="card-img-left mx-auto mt-3 rounded-circle" style="width: 40%"
+      [src]="'https://upload.wikimedia.org/wikipedia/commons/f/f4/Nelson_Neves_picuture.gif'">
+    }@else {
+      <img  class="card-img-left mx-auto mt-3 rounded-circle" style="width: 40%" [src]="producto.foto">
+    }
+    <h3 class="card-title text-center">{{producto.nombre}}</h3>
+        <h5 class="card-title text-center">{{producto.descripcion}}</h5>
+    <!--<p class="card-text text-center" [hidden]="ocultar">{{empleado.nombre.toLowerCase()}} trabaja en {{empleado.departamento}}.</p>
+    <button class='btn btn-primary' (click) = 'cambiarVisibilidad()'>{{(ocultar)?'Ver':'Ocultar'}}</button>
+    <a class="btn btn-primary" [routerLink]="['/empleados',empleado.id]" >Ver Detalles</a>-->
+    <!--<button class="btn btn-primary" (click)="verDetalles()" >Ver Detalles</button>-->
+  </div>
+</div>
